@@ -80,7 +80,7 @@ export default function Home() {
         duration: 3,            // Length relative to scroll scrub
         ease: "power1.inOut",   // Smooth interpolation
       }, 0);
-      
+
     }, containerRef); // Scope context to container
 
     return () => {
@@ -91,7 +91,7 @@ export default function Home() {
   return (
     <main className="relative bg-[#050505] text-white min-h-[300vh] overflow-hidden selection:bg-white/20 font-sans">
       {/* ScrollTrigger Pinned Area */}
-      <div 
+      <div
         ref={containerRef}
         className="relative h-screen w-full flex flex-col items-center justify-center pt-8 px-4"
       >
@@ -102,8 +102,8 @@ export default function Home() {
           {/* Animated Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-[0.5em] md:tracking-[0.8em] mb-12 uppercase flex flex-col md:flex-row gap-4 md:gap-8 ml-[0.5em] md:ml-[0.8em] text-white/95 drop-shadow-xl">
             {headlineText.map((word, index) => (
-              <span 
-                key={index} 
+              <span
+                key={index}
                 ref={(el) => { headlineWordsRef.current[index] = el; }}
                 className="inline-block opacity-0 will-change-transform"
               >
@@ -119,57 +119,57 @@ export default function Home() {
               { value: "0.2s", label: "Response", color: "text-purple-400" },
               { value: "120+", label: "Features", color: "text-teal-400" }
             ].map((stat, i) => (
-              <div 
-                key={stat.label} 
-                ref={(el) => { statItemsRef.current[i] = el; }} 
+              <div
+                key={stat.label}
+                ref={(el) => { statItemsRef.current[i] = el; }}
                 className="flex flex-col items-center opacity-0 will-change-transform"
               >
-                 <span className={`text-5xl md:text-6xl font-light ${stat.color} drop-shadow-md`}>
-                   {stat.value}
-                 </span>
-                 <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase mt-4 text-zinc-500">
-                   {stat.label}
-                 </span>
+                <span className={`text-5xl md:text-6xl font-light ${stat.color} drop-shadow-md`}>
+                  {stat.value}
+                </span>
+                <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase mt-4 text-zinc-500">
+                  {stat.label}
+                </span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Animated Car Image */}
-        <div 
+        <div
           ref={carRef}
           className="absolute bottom-[-5%] md:bottom-[-10%] w-[90%] md:w-[70%] max-w-6xl z-30 opacity-0 will-change-transform drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
         >
-           <Image 
-             src="/car.jpg" 
-             alt="Premium Sports Car" 
-             width={1600} 
-             height={1000}
-             priority
-             className="w-full h-auto object-contain pointer-events-none rounded-sm"
-             style={{ 
-               maskImage: "linear-gradient(to top, transparent, black 10%, black 90%, transparent)", 
-               WebkitMaskImage: "linear-gradient(to top, transparent, black 10%, black 90%, transparent)" 
-             }}
-           />
+          <Image
+            src="/Scroll_Animation/car.jpg"
+            alt="Premium Sports Car"
+            width={1600}
+            height={1000}
+            priority
+            className="w-full h-auto object-contain pointer-events-none rounded-sm"
+            style={{
+              maskImage: "linear-gradient(to top, transparent, black 10%, black 90%, transparent)",
+              WebkitMaskImage: "linear-gradient(to top, transparent, black 10%, black 90%, transparent)"
+            }}
+          />
         </div>
       </div>
 
       {/* Subsequent Scrollable Content Layer */}
       <div className="h-screen w-full flex items-center justify-center bg-[#0a0a0a] border-t border-zinc-900 z-40 relative px-6 shadow-[0_-20px_60px_rgba(0,0,0,0.9)]">
-         <div className="max-w-4xl text-center">
-            <h2 className="text-4xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 mb-8 tracking-wider">
-               Precision In Motion
-            </h2>
-            <p className="text-zinc-400 leading-relaxed text-lg md:text-2xl font-light max-w-3xl mx-auto">
-              By tying transformations directly to scroll progress rather than time,
-              we create interactions that feel completely natural. The motion conforms exactly to the user's velocity.
-            </p>
-         </div>
+        <div className="max-w-4xl text-center">
+          <h2 className="text-4xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 mb-8 tracking-wider">
+            Precision In Motion
+          </h2>
+          <p className="text-zinc-400 leading-relaxed text-lg md:text-2xl font-light max-w-3xl mx-auto">
+            By tying transformations directly to scroll progress rather than time,
+            we create interactions that feel completely natural. The motion conforms exactly to the user's velocity.
+          </p>
+        </div>
       </div>
-      
+
       <div className="h-[50vh] w-full bg-[#050505] flex items-center justify-center">
-         <p className="text-zinc-600 text-sm tracking-widest uppercase font-semibold">End of scroll demonstration</p>
+        <p className="text-zinc-600 text-sm tracking-widest uppercase font-semibold">End of scroll demonstration</p>
       </div>
     </main>
   );
