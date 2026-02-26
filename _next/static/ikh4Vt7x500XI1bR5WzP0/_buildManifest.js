@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/Scroll_Animation//_next/:path+",
+        "destination": "/Scroll_Animation/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
